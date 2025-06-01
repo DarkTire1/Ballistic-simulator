@@ -3,7 +3,7 @@ using UnityEngine;
 public class camera_movement : MonoBehaviour
 {
     [SerializeField]
-    private float mouseSensitivitySpeed = 2f;
+    private float mouseSensitivitySpeed = 250f;
     [SerializeField]
     private float speed = 10f;
     [SerializeField]
@@ -45,7 +45,7 @@ public class camera_movement : MonoBehaviour
 
             float mouse = Input.GetAxis("Mouse ScrollWheel");
 
-            speed = Mathf.Clamp(speed + mouse * mouseSensitivitySpeed, 0f, 250f);
+            speed = Mathf.Clamp(speed + mouse * mouseSensitivitySpeed, 0f, 25000f);
         }
     }
 
