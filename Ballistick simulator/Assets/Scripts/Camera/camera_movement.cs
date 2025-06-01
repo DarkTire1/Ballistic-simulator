@@ -45,18 +45,7 @@ public class camera_movement : MonoBehaviour
 
             float mouse = Input.GetAxis("Mouse ScrollWheel");
 
-            if (mouse > 0f)
-            {
-                if (speed + mouseSensitivitySpeed <= 250f)
-                    speed += mouseSensitivitySpeed;
-            }
-            if (mouse < 0f)
-            {
-                if (speed - mouseSensitivitySpeed >= 0f)
-                    speed -= mouseSensitivitySpeed;
-            }
-
-
+            speed = Mathf.Clamp(speed + mouse * mouseSensitivitySpeed, 0f, 250f);
         }
     }
 
@@ -64,10 +53,6 @@ public class camera_movement : MonoBehaviour
     {
         if (cameraMode)
         {
-            float movex = 0f;
-            float movey = 0f;
-            float movez = 0f;
-
             Vector3 lookDirection = transform.forward;
 
             Vector3 movement = Vector3.zero;
