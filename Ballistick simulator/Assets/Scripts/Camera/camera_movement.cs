@@ -8,6 +8,8 @@ public class camera_movement : MonoBehaviour
     private float moveSpeed = 10f;
     [SerializeField]
     private float sensitivity = 100f;
+    [SerializeField]
+    private float pushFotce;
 
     private Rigidbody rb;
 
@@ -71,14 +73,15 @@ public class camera_movement : MonoBehaviour
                 movement -= new Vector3(lookDirection.x, 0f, lookDirection.z);
 
             if (Input.GetKey(KeyCode.Space))
-                movement += upDirection;
+                movement.y += upDirection.y;
 
             if (Input.GetKey(KeyCode.LeftShift))
-                movement -= upDirection;
+                movement.y -= upDirection.y;
 
             movement = movement.normalized * moveSpeed * Time.fixedDeltaTime;
 
             rb.MovePosition(rb.position + movement);
         }
     }
+
 }
