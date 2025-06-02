@@ -3,32 +3,31 @@ using UnityEngine;
 public class camera_movement : MonoBehaviour
 {
     [SerializeField]
-    private float mouseSensitivitySpeed = 250f;
+    private float speedStep = 250f;
     [SerializeField]
-    private float speed = 10f;
+    private float moveSpeed = 10f;
     [SerializeField]
     private float sensitivity = 100f;
+
+    private Rigidbody rb;
 
     private float xRotation = 0f;
     private float yRotation = 0f;
 
     private bool cameraMode;
 
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
             cameraMode = !cameraMode;
-            if (cameraMode)
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
-            if (!cameraMode)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
+            Cursor.lockState = cameraMode ? CursorLockMode.Locked : CursorLockMode.None;
+            Cursor.visible = !cameraMode;
         }
 
         if (cameraMode)
@@ -45,7 +44,7 @@ public class camera_movement : MonoBehaviour
 
             float mouse = Input.GetAxis("Mouse ScrollWheel");
 
-            speed = Mathf.Clamp(speed + mouse * mouseSensitivitySpeed, 0f, 25000f);
+            moveSpeed = Mathf.Clamp(moveSpeed + mouse * speedStep, 0f, 25000f);
         }
     }
 
@@ -54,40 +53,32 @@ public class camera_movement : MonoBehaviour
         if (cameraMode)
         {
             Vector3 lookDirection = transform.forward;
+            Vector3 rightDirection = transform.right;
+            Vector3 upDirection = transform.up;
 
             Vector3 movement = Vector3.zero;
 
             if (Input.GetKey(KeyCode.A))
-            {
-                movement.x -= lookDirection.z * speed * Time.deltaTime;
-                movement.z += lookDirection.x * speed * Time.deltaTime;
-            }
+                movement -= rightDirection;
 
             if (Input.GetKey(KeyCode.D))
-            {
-                movement.x += lookDirection.z * speed * Time.deltaTime;
-                movement.z -= lookDirection.x * speed * Time.deltaTime;
-            }
+                movement += rightDirection;
 
             if (Input.GetKey(KeyCode.W))
-            {
-                movement += lookDirection * speed * Time.deltaTime;
-                movement.y = 0f;
-            }
+                movement += new Vector3 (lookDirection.x, 0f, lookDirection.z);
 
             if (Input.GetKey(KeyCode.S))
-            {
-                movement -= lookDirection * speed * Time.deltaTime;
-                movement.y = 0f;
-            }
+                movement -= new Vector3(lookDirection.x, 0f, lookDirection.z);
 
             if (Input.GetKey(KeyCode.Space))
-                movement.y += speed * Time.deltaTime;
+                movement += upDirection;
 
             if (Input.GetKey(KeyCode.LeftShift))
-                movement.y -= speed * Time.deltaTime;
+                movement -= upDirection;
 
-            transform.position += movement;
+            movement = movement.normalized * moveSpeed * Time.fixedDeltaTime;
+
+            rb.MovePosition(rb.position + movement);
         }
     }
 }
