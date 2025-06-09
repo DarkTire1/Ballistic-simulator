@@ -5,23 +5,16 @@ public class camera_movement : MonoBehaviour
     [SerializeField]
     private float speedStep = 250f;
     [SerializeField]
-    private float moveSpeed = 10f;
+    private float moveSpeed = 100f;
     [SerializeField]
     private float sensitivity = 100f;
     [SerializeField]
-    private float pushFotce;
-
-    private Rigidbody rb;
+    private Rigidbody cameraRb;
 
     private float xRotation = 0f;
     private float yRotation = 0f;
 
-    private bool cameraMode;
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+    private bool cameraMode = false;
 
     void Update()
     {
@@ -32,7 +25,7 @@ public class camera_movement : MonoBehaviour
             Cursor.visible = !cameraMode;
         }
 
-        if (cameraMode)
+        if (cameraMode == true)
         {
             float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
@@ -56,7 +49,7 @@ public class camera_movement : MonoBehaviour
         {
             Vector3 lookDirection = transform.forward;
             Vector3 rightDirection = transform.right;
-            Vector3 upDirection = transform.up;
+
 
             Vector3 movement = Vector3.zero;
 
@@ -73,14 +66,14 @@ public class camera_movement : MonoBehaviour
                 movement -= new Vector3(lookDirection.x, 0f, lookDirection.z);
 
             if (Input.GetKey(KeyCode.Space))
-                movement.y += upDirection.y;
+                movement += Vector3.up;
 
             if (Input.GetKey(KeyCode.LeftShift))
-                movement.y -= upDirection.y;
+                movement += Vector3.down;
 
-            movement = movement.normalized * moveSpeed * Time.fixedDeltaTime;
+            movement = movement.normalized * moveSpeed;
 
-            rb.MovePosition(rb.position + movement);
+            cameraRb.linearVelocity = movement;
         }
     }
 

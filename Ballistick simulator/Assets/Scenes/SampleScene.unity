@@ -207,13 +207,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.2375164, y: 0, z: 0, w: 0.9713836}
   m_LocalPosition: {x: -28887, y: -8134, z: 44053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -27.48, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   speedStep: 250
   moveSpeed: 10000
   sensitivity: 500
-  pushFotce: 100
+  cameraRb: {fileID: 963194231}
 --- !u!135 &963194230
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -259,9 +259,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 0.0000001
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -276,7 +276,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 2
 --- !u!1 &1276863005
 GameObject:
@@ -434,6 +434,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 3dad76d46d80a0e469521c611ba6bd0a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1646364252}
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 3dad76d46d80a0e469521c611ba6bd0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1646364256}
   m_SourcePrefab: {fileID: 100100000, guid: 3dad76d46d80a0e469521c611ba6bd0a, type: 3}
 --- !u!1 &1646364248 stripped
 GameObject:
@@ -462,6 +465,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 3dad76d46d80a0e469521c611ba6bd0a, type: 3}
+--- !u!65 &1646364256
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646364248}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 26147.791, y: 9316.063, z: 25169.15}
+  m_Center: {x: -13192.286, y: 4844.856, z: 12750.702}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
