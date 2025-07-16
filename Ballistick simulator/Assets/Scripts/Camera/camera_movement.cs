@@ -21,6 +21,10 @@ public class camera_movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             cameraMode = !cameraMode;
+            if (cameraMode)
+                CameraManager.ChangeCameraState(Camera.main, new Vector3 (0, 300, 0), Quaternion.Euler(0, 0, 0), false);
+            else
+                CameraManager.ChangeCameraState(Camera.main, new Vector3(0, 12000, 0), Quaternion.Euler(90, 0, 0), true);
             Cursor.lockState = cameraMode ? CursorLockMode.Locked : CursorLockMode.None;
             Cursor.visible = !cameraMode;
         }

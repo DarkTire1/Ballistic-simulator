@@ -24,7 +24,7 @@ public class Spotthepoint : MonoBehaviour
                 // Создаём новый маркер (маленький красный шарик)
                 currentMarker = GameObject.CreatePrimitive(PrimitiveType.Sphere);
                 currentMarker.transform.position = point;
-                currentMarker.transform.localScale = Vector3.one * 10f;
+                currentMarker.transform.localScale = Vector3.one * 30f;
 
                 // Отключаем коллайдер, чтобы не мешал новым кликам
                 Destroy(currentMarker.GetComponent<Collider>());
