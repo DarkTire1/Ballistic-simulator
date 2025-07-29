@@ -5,6 +5,7 @@ public class AmmoDropdownManager : MonoBehaviour
 {
     public GameObject shellWindow;
     public GameObject rocketWindow;
+    public TMP_Dropdown ammoDropdown;
     public bool isStart = true;
     public void OnValueChanged(int index)
     {
@@ -18,5 +19,9 @@ public class AmmoDropdownManager : MonoBehaviour
             rocketWindow.SetActive(true);
             shellWindow.SetActive(false);
         }
+    }
+    public void Start()
+    {
+        ammoDropdown.options.RemoveAt(2);
     }
 }
