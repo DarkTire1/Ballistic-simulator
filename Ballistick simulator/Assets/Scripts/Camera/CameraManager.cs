@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    // установка камеры в стартовое положение
     public static void ChangeCameraState(Camera camera, Vector3 position, Quaternion rotation, bool isOrthographic)
     {
         if (camera == null) return;
 
         var rb = camera.GetComponent<Rigidbody>();
+        var transform = camera.transform;
 
         if (rb != null)
         {
@@ -16,8 +18,8 @@ public class CameraManager : MonoBehaviour
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
 
-            camera.transform.position = position;
-            camera.transform.rotation = rotation;
+            transform.position = position;
+            transform.rotation = rotation;
         }
 
         camera.orthographic = isOrthographic;
