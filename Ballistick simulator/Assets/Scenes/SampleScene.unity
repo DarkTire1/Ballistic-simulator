@@ -1449,6 +1449,7 @@ GameObject:
   - component: {fileID: 233725266}
   - component: {fileID: 233725265}
   - component: {fileID: 233725264}
+  - component: {fileID: 233725267}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -1615,6 +1616,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233725262}
   m_CullTransparentMesh: 1
+--- !u!114 &233725267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233725262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c443b9cb7ced6a44d8a77313d83f1325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputField: {fileID: 233725264}
 --- !u!1 &237151825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,6 +2526,7 @@ GameObject:
   - component: {fileID: 391559656}
   - component: {fileID: 391559658}
   - component: {fileID: 391559657}
+  - component: {fileID: 391559659}
   m_Layer: 5
   m_Name: Coords
   m_TagString: Untagged
@@ -2558,7 +2573,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: x:190 y:123 z:456
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2637,6 +2652,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391559655}
   m_CullTransparentMesh: 1
+--- !u!114 &391559659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391559655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99e709639bdc7c64b813f37a98bad8fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 391559657}
 --- !u!1 &393991852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2926,7 +2954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a259cc268e85ad4f9de8228418ef415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiElements:
+  _shellUiElements:
   - {fileID: 1851572676}
   - {fileID: 447682473}
   - {fileID: 1818876232}
@@ -2934,16 +2962,16 @@ MonoBehaviour:
   - {fileID: 808535682}
   - {fileID: 670892950}
   - {fileID: 1211945404}
+  _rocketUiElements:
   - {fileID: 1818024014}
   - {fileID: 1123837863}
   - {fileID: 482835865}
   - {fileID: 555406966}
   - {fileID: 233725262}
   - {fileID: 1649457760}
+  - {fileID: 1404345801}
   - {fileID: 1386434391}
   - {fileID: 391559655}
-  - {fileID: 1404345801}
-  - {fileID: 907920464}
 --- !u!4 &419214908
 Transform:
   m_ObjectHideFlags: 0
@@ -3108,6 +3136,7 @@ GameObject:
   - component: {fileID: 447682477}
   - component: {fileID: 447682476}
   - component: {fileID: 447682475}
+  - component: {fileID: 447682478}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -3274,6 +3303,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447682473}
   m_CullTransparentMesh: 1
+--- !u!114 &447682478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447682473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c443b9cb7ced6a44d8a77313d83f1325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputField: {fileID: 447682475}
 --- !u!1 &482835865
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,6 +3328,7 @@ GameObject:
   - component: {fileID: 482835869}
   - component: {fileID: 482835868}
   - component: {fileID: 482835867}
+  - component: {fileID: 482835870}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -3452,6 +3495,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482835865}
   m_CullTransparentMesh: 1
+--- !u!114 &482835870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482835865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c443b9cb7ced6a44d8a77313d83f1325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputField: {fileID: 482835867}
 --- !u!1 &498213622
 GameObject:
   m_ObjectHideFlags: 0
@@ -4116,6 +4172,7 @@ GameObject:
   - component: {fileID: 555406970}
   - component: {fileID: 555406969}
   - component: {fileID: 555406968}
+  - component: {fileID: 555406971}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -4282,6 +4339,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555406966}
   m_CullTransparentMesh: 1
+--- !u!114 &555406971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555406966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c443b9cb7ced6a44d8a77313d83f1325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputField: {fileID: 555406968}
 --- !u!1 &569989983
 GameObject:
   m_ObjectHideFlags: 0
@@ -5271,6 +5341,7 @@ GameObject:
   - component: {fileID: 670892951}
   - component: {fileID: 670892953}
   - component: {fileID: 670892952}
+  - component: {fileID: 670892954}
   m_Layer: 5
   m_Name: Coords
   m_TagString: Untagged
@@ -5317,7 +5388,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: x:190 y:123 z:456
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5396,6 +5467,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670892950}
   m_CullTransparentMesh: 1
+--- !u!114 &670892954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670892950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99e709639bdc7c64b813f37a98bad8fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 670892952}
 --- !u!1 &676460246
 GameObject:
   m_ObjectHideFlags: 0
@@ -6542,6 +6626,7 @@ GameObject:
   - component: {fileID: 808535686}
   - component: {fileID: 808535685}
   - component: {fileID: 808535684}
+  - component: {fileID: 808535687}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -6708,6 +6793,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808535682}
   m_CullTransparentMesh: 1
+--- !u!114 &808535687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808535682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c443b9cb7ced6a44d8a77313d83f1325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputField: {fileID: 808535684}
 --- !u!1 &832676216
 GameObject:
   m_ObjectHideFlags: 0
@@ -6768,6 +6866,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2709305911501707158, guid: 062f95c197da2d949b31a85132463838, type: 3}
+--- !u!114 &843251709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843251705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acee427dc97266d43aafd1ee844c09bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meshCollider: {fileID: 843251707}
+  resolutionX: 0
+  resolutionZ: 0
+  raycastHeight: 500
 --- !u!1 &859354872
 GameObject:
   m_ObjectHideFlags: 0
@@ -7417,6 +7531,7 @@ GameObject:
   - component: {fileID: 907920467}
   - component: {fileID: 907920466}
   - component: {fileID: 907920469}
+  - component: {fileID: 907920470}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -7509,30 +7624,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 907920469}
-        m_TargetAssemblyTypeName: AmmoDropdownManager, Assembly-CSharp
-        m_MethodName: OnValueChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 676460248}
-        m_TargetAssemblyTypeName: Spotthepoint, Assembly-CSharp
-        m_MethodName: RemoveCurrentMarker
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 961827734}
         m_TargetAssemblyTypeName: Spotthepoint, Assembly-CSharp
         m_MethodName: RemoveCurrentMarker
@@ -7561,6 +7652,42 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Spotthepoint, Assembly-CSharp
         m_MethodName: RemoveCurrentMarker
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 419214907}
+        m_TargetAssemblyTypeName: ClearUi, Assembly-CSharp
+        m_MethodName: ClearShellUiElements
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 419214907}
+        m_TargetAssemblyTypeName: ClearUi, Assembly-CSharp
+        m_MethodName: ClearRocketUiElements
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 907920469}
+        m_TargetAssemblyTypeName: AmmoDropdownManager, Assembly-CSharp
+        m_MethodName: OnValueChanged
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7624,6 +7751,19 @@ MonoBehaviour:
   rocketWindow: {fileID: 1111038817}
   ammoDropdown: {fileID: 907920466}
   isStart: 0
+--- !u!114 &907920470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907920464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e82196fdeeebd00439ea306641bd551f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropdown: {fileID: 907920466}
 --- !u!1 &909779039
 GameObject:
   m_ObjectHideFlags: 0
@@ -8670,6 +8810,7 @@ GameObject:
   - component: {fileID: 1123837867}
   - component: {fileID: 1123837866}
   - component: {fileID: 1123837865}
+  - component: {fileID: 1123837868}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -8836,6 +8977,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123837863}
   m_CullTransparentMesh: 1
+--- !u!114 &1123837868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123837863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c443b9cb7ced6a44d8a77313d83f1325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputField: {fileID: 1123837865}
 --- !u!1 &1131093044
 GameObject:
   m_ObjectHideFlags: 0
@@ -9077,7 +9231,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 419214907}
         m_TargetAssemblyTypeName: ClearUi, Assembly-CSharp
-        m_MethodName: ClearUiElements
+        m_MethodName: ClearRocketUiElements
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9793,6 +9947,7 @@ GameObject:
   - component: {fileID: 1211945405}
   - component: {fileID: 1211945407}
   - component: {fileID: 1211945406}
+  - component: {fileID: 1211945408}
   m_Layer: 5
   m_Name: Coords
   m_TagString: Untagged
@@ -9839,7 +9994,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: x:190 y:123 z:456
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9918,6 +10073,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211945404}
   m_CullTransparentMesh: 1
+--- !u!114 &1211945408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211945404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99e709639bdc7c64b813f37a98bad8fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 1211945406}
 --- !u!1 &1222481441
 GameObject:
   m_ObjectHideFlags: 0
@@ -10504,6 +10672,7 @@ GameObject:
   - component: {fileID: 1350881945}
   - component: {fileID: 1350881944}
   - component: {fileID: 1350881943}
+  - component: {fileID: 1350881946}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -10632,6 +10801,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350881941}
   m_CullTransparentMesh: 1
+--- !u!114 &1350881946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350881941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e82196fdeeebd00439ea306641bd551f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropdown: {fileID: 1350881943}
 --- !u!1 &1353230276
 GameObject:
   m_ObjectHideFlags: 0
@@ -11057,6 +11239,7 @@ GameObject:
   - component: {fileID: 1386434392}
   - component: {fileID: 1386434394}
   - component: {fileID: 1386434393}
+  - component: {fileID: 1386434395}
   m_Layer: 5
   m_Name: Coords
   m_TagString: Untagged
@@ -11103,7 +11286,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: x:190 y:123 z:456
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11182,6 +11365,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386434391}
   m_CullTransparentMesh: 1
+--- !u!114 &1386434395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386434391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99e709639bdc7c64b813f37a98bad8fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 1386434393}
 --- !u!1 &1388974212
 GameObject:
   m_ObjectHideFlags: 0
@@ -11246,6 +11442,7 @@ GameObject:
   - component: {fileID: 1404345805}
   - component: {fileID: 1404345804}
   - component: {fileID: 1404345803}
+  - component: {fileID: 1404345806}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -11412,6 +11609,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404345801}
   m_CullTransparentMesh: 1
+--- !u!114 &1404345806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404345801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c443b9cb7ced6a44d8a77313d83f1325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputField: {fileID: 1404345803}
 --- !u!1 &1406407417
 GameObject:
   m_ObjectHideFlags: 0
@@ -11580,6 +11790,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8716911801162785812, guid: 062f95c197da2d949b31a85132463838, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8716911801162785812, guid: 062f95c197da2d949b31a85132463838, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 062f95c197da2d949b31a85132463838, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30
@@ -11657,6 +11875,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8716911801162785812, guid: 062f95c197da2d949b31a85132463838, type: 3}
       insertIndex: -1
       addedObject: {fileID: 843251707}
+    - targetCorrespondingSourceObject: {fileID: -8716911801162785812, guid: 062f95c197da2d949b31a85132463838, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 843251709}
   m_SourcePrefab: {fileID: 100100000, guid: 062f95c197da2d949b31a85132463838, type: 3}
 --- !u!1 &1523323706
 GameObject:
@@ -12071,7 +12292,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 419214907}
         m_TargetAssemblyTypeName: ClearUi, Assembly-CSharp
-        m_MethodName: ClearUiElements
+        m_MethodName: ClearRocketUiElements
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12285,7 +12506,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 419214907}
         m_TargetAssemblyTypeName: ClearUi, Assembly-CSharp
-        m_MethodName: ClearUiElements
+        m_MethodName: ClearShellUiElements
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12672,6 +12893,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623610915}
   m_CullTransparentMesh: 1
+--- !u!1 &1627601052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1627601053}
+  m_Layer: 0
+  m_Name: Starter object
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1627601053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627601052}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1619.7, y: 11913.8, z: -1010.93}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1649457760
 GameObject:
   m_ObjectHideFlags: 0
@@ -12684,6 +12936,7 @@ GameObject:
   - component: {fileID: 1649457764}
   - component: {fileID: 1649457763}
   - component: {fileID: 1649457762}
+  - component: {fileID: 1649457765}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -12812,6 +13065,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649457760}
   m_CullTransparentMesh: 1
+--- !u!114 &1649457765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649457760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e82196fdeeebd00439ea306641bd551f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropdown: {fileID: 1649457762}
 --- !u!1 &1669121816
 GameObject:
   m_ObjectHideFlags: 0
@@ -13437,7 +13703,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 419214907}
         m_TargetAssemblyTypeName: ClearUi, Assembly-CSharp
-        m_MethodName: ClearUiElements
+        m_MethodName: ClearShellUiElements
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13677,6 +13943,7 @@ GameObject:
   - component: {fileID: 1818024018}
   - component: {fileID: 1818024017}
   - component: {fileID: 1818024016}
+  - component: {fileID: 1818024019}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -13843,6 +14110,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818024014}
   m_CullTransparentMesh: 1
+--- !u!114 &1818024019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818024014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c443b9cb7ced6a44d8a77313d83f1325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputField: {fileID: 1818024016}
 --- !u!1 &1818876232
 GameObject:
   m_ObjectHideFlags: 0
@@ -13855,6 +14135,7 @@ GameObject:
   - component: {fileID: 1818876236}
   - component: {fileID: 1818876235}
   - component: {fileID: 1818876234}
+  - component: {fileID: 1818876237}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -14021,6 +14302,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818876232}
   m_CullTransparentMesh: 1
+--- !u!114 &1818876237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818876232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c443b9cb7ced6a44d8a77313d83f1325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputField: {fileID: 1818876234}
 --- !u!1 &1819642105
 GameObject:
   m_ObjectHideFlags: 0
@@ -14315,6 +14609,7 @@ GameObject:
   - component: {fileID: 1851572680}
   - component: {fileID: 1851572679}
   - component: {fileID: 1851572678}
+  - component: {fileID: 1851572681}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -14481,6 +14776,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851572676}
   m_CullTransparentMesh: 1
+--- !u!114 &1851572681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851572676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c443b9cb7ced6a44d8a77313d83f1325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputField: {fileID: 1851572678}
 --- !u!1 &1899573208
 GameObject:
   m_ObjectHideFlags: 0
@@ -16102,3 +16410,4 @@ SceneRoots:
   - {fileID: 626754144}
   - {fileID: 1590346389}
   - {fileID: 1425574910}
+  - {fileID: 1627601053}

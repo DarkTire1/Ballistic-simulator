@@ -1,66 +1,36 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ClearUi : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] uiElements;
+    private GameObject[] _shellUiElements;
+    [SerializeField]
+    private GameObject[] _rocketUiElements;
 
-    public void ClearUiElements()
+    public void ClearShellUiElements()
     {
-        foreach (GameObject uiElement in uiElements)
-        {
-            if (uiElement != null)
-            {
-                ResetUIElement(uiElement);
-            }
-        }
+        ClearUiElements(_shellUiElements);
     }
-    private static void ResetUIElement(GameObject obj)
+
+    public void ClearRocketUiElements()
     {
-        // Берем все нужные компоненты и обрабатываем каждый
-        foreach (var component in obj.GetComponents<Component>())
+        ClearUiElements(_rocketUiElements);
+    }
+
+    private void ClearUiElements(GameObject[] uiElements)
+    {
+        foreach (var obj in uiElements)
         {
-            switch (component)
+            if (obj == null) continue;
+
+            // Ищем все компоненты, реализующие интерфейс и вызываем сброс
+            var resettableComponents = obj.GetComponents<IResettableUiElement>();
+            foreach (var resettable in resettableComponents)
             {
-                case TMP_InputField tmpInput:
-                    tmpInput.text = "";
-                    break;
-
-                case InputField legacyInput:
-                    legacyInput.text = "";
-                    break;
-
-                case TMP_Dropdown tmpDropdown:
-                    tmpDropdown.value = 0;
-                    break;
-
-                case Dropdown legacyDropdown:
-                    legacyDropdown.value = 0;
-                    break;
-
-                case Toggle toggle:
-                    toggle.isOn = false;
-                    break;
-
-                case Slider slider:
-                    slider.value = slider.minValue;
-                    break;
-
-                case TextMeshProUGUI tmpText:
-                    tmpText.text = "";
-                    break;
-
-                case Text legacyText:
-                    legacyText.text = "";
-                    break;
-
-                case Image image:
-                    image.color = Color.white;
-                    break;
+                resettable.ResetUiElement();
             }
         }
     }
 }
+
 
