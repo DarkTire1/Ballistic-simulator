@@ -9,47 +9,64 @@ public class ShellParametersHolder : MonoBehaviour
     public TMP_InputField massInput;
     public TMP_InputField speedInput;
     public TMP_InputField diameterInput;
-    public TMP_InputField dragInput;
-    public TMP_Dropdown trajectoryTypeDropdown;
+    public TMP_InputField DestructionRadius;
 
     [Header("Координаты")]
+    // Поля должны быть InputField, если пользователь вводит данные. 
+    // Если TextMeshProUGUI - значит, они отображают данные, введенные из другого места.
     public TextMeshProUGUI startPositionText;
     public TextMeshProUGUI targetPositionText;
 
     public ShellParameters GetParameters()
     {
-        float mass = TryParseFloat(massInput.text, 1f);
-        float speed = TryParseFloat(speedInput.text, 10f);
+        // ... [Парсинг численных значений] ...
+        float mass = TryParseFloat(massInput.text, 42f);
+        float speed = TryParseFloat(speedInput.text, 500f);
+        float diameterMm = TryParseFloat(diameterInput.text, 152f);
+        float diameter = diameterMm / 1000f;
+        float destructionRadius = TryParseFloat(DestructionRadius.text, 50f);
 
-        float diameterMm = TryParseFloat(diameterInput.text, 100f); // по умолчанию 100 мм (0.1 м)
-        float diameter = diameterMm / 1000f; // перевод мм в метры
+        // Парсинг координат: здесь мы получаем UnityEngine.Vector3
+        // Так как ParseVector3 использует UnityEngine.Vector3
+        UnityEngine.Vector3 startPosUnity = ParseVector3(startPositionText.text);
+        UnityEngine.Vector3 targetPosUnity = ParseVector3(targetPositionText.text);
 
-        float drag = TryParseFloat(dragInput.text, 0.47f); // default: шар
-
-        TrajectoryType trajectoryType = trajectoryTypeDropdown.value == 0
-            ? TrajectoryType.High
-            : TrajectoryType.Low;
-
-        Vector3 startPos = ParseVector3(startPositionText.text);
-        Vector3 targetPos = ParseVector3(targetPositionText.text);
+        // --- КЛЮЧЕВАЯ КОНВЕРТАЦИЯ ---
+        // Создаем векторы System.Numerics
+        System.Numerics.Vector3 startPosSystem = new System.Numerics.Vector3(
+            startPosUnity.x,
+            startPosUnity.y,
+            startPosUnity.z
+        );
+        System.Numerics.Vector3 targetPosSystem = new System.Numerics.Vector3(
+            targetPosUnity.x,
+            targetPosUnity.y,
+            targetPosUnity.z
+        );
+        // --- КОНЕЦ КОНВЕРТАЦИИ ---
 
         return new ShellParameters
         {
             Mass = mass,
             InitialSpeed = speed,
             Diameter = diameter,
-            DragCoefficient = drag,
-            TrajectoryType = trajectoryType,
-            StartPosition = startPos,
-            TargetPosition = targetPos
+            RadiusOfDestruction = destructionRadius,
+            InitialHeight = 3, 
+
+            // ПРИСВАИВАЕМ System.Numerics.Vector3
+            StartPosition = startPosSystem,
+            TargetPosition = targetPosSystem,
+
+            LaunchAngle = 0f,
+            WindVelocity = System.Numerics.Vector2.Zero // Используем System.Numerics.Vector2
         };
     }
-
     private float TryParseFloat(string input, float fallback)
     {
         if (string.IsNullOrEmpty(input))
             return fallback;
 
+        // Унифицируем разделитель: запятая -> точка
         input = input.Replace(",", ".");
 
         if (float.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out float result))
@@ -58,19 +75,36 @@ public class ShellParametersHolder : MonoBehaviour
         return fallback;
     }
 
+    // --- ИСПРАВЛЕННЫЙ МЕТОД ДЛЯ ПАРСИНГА ФОРМАТА "x:XXX y:YYY z:ZZZ" ---
     private Vector3 ParseVector3(string input)
     {
+        // Очистка и унификация разделителей
+        string cleanInput = input.Replace(" ", "").ToLower(); // "x:-663y:126z:77"
+
         float x = 0f, y = 0f, z = 0f;
 
-        input = input.Replace(" ", "").ToLower();
-
-        string[] parts = input.Split(new char[] { 'x', 'y', 'z', ':' }, System.StringSplitOptions.RemoveEmptyEntries);
-
-        if (parts.Length >= 3)
+        // Находим и парсим X
+        int xIndex = cleanInput.IndexOf("x:");
+        int yIndex = cleanInput.IndexOf("y:");
+        if (xIndex != -1 && yIndex != -1)
         {
-            x = TryParseFloat(parts[0], 0f);
-            y = TryParseFloat(parts[1], 0f);
-            z = TryParseFloat(parts[2], 0f);
+            string xPart = cleanInput.Substring(xIndex + 2, yIndex - (xIndex + 2));
+            x = TryParseFloat(xPart, 0f);
+        }
+
+        // Находим и парсим Y
+        int zIndex = cleanInput.IndexOf("z:");
+        if (yIndex != -1 && zIndex != -1)
+        {
+            string yPart = cleanInput.Substring(yIndex + 2, zIndex - (yIndex + 2));
+            y = TryParseFloat(yPart, 0f);
+        }
+
+        // Находим и парсим Z (до конца строки)
+        if (zIndex != -1)
+        {
+            string zPart = cleanInput.Substring(zIndex + 2);
+            z = TryParseFloat(zPart, 0f);
         }
 
         return new Vector3(x, y, z);

@@ -50,7 +50,7 @@ public class Spotthepoint : MonoBehaviour
     {
         currentMarker = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         currentMarker.transform.SetPositionAndRotation(position, Quaternion.identity);
-        currentMarker.transform.localScale = Vector3.one * 15f;
+        currentMarker.transform.localScale = Vector3.one * 45f;
 
         var renderer = currentMarker.GetComponent<Renderer>();
         renderer.material = markerMaterial;
